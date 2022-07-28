@@ -20,7 +20,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('components.front-layout');
 });
 
 Route::get('/dashboard', function () {
