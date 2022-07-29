@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Middleware\CheckUserType;
 use App\Models\Category;
 use Database\Seeders\ProductsTableSeeder;
 use Illuminate\Routing\Route as RoutingRoute;
@@ -19,9 +20,9 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
 
-Route::get('/', function () {
-    return view('components.front-layout');
-});
+Route::get('/store', function () {
+    return view('store.index');
+})->name('store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -30,8 +31,9 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 // Route::controller(CategoryController::class)->
 Route::group([
-    'prefix' => 'dashboard',
-    'as' => 'categories.'
+    'prefix' => 'dashboard', //link
+    'as' => 'categories.', //rote names
+    'middleware' => ['auth', CheckUserType::class]
 ], function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('index');
     Route::get('categories/create', [CategoryController::class, 'create'])->name('create');
