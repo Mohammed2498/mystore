@@ -52,4 +52,6 @@ Route::group([
     Route::resource('users', UserController::class);
 });
 
-
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
