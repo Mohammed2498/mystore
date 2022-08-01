@@ -73,7 +73,7 @@
                                     <li><a href="wishlist.html">My Wishlist</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="{{ route('login') }}" >Log In</a></li>
-                                    
+
                                 </ul>
                             </div>
                             <!-- End .header-menu -->
@@ -557,7 +557,6 @@
                             <!-- End .widget -->
                         </div>
                         <!-- End .col-lg-3 -->
-
                         <div class="col-lg-3 col-sm-6">
                             <div class="widget widget-newsletter">
                                 <h4 class="widget-title">Subscribe newsletter</h4>
