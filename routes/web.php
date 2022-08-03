@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Home\HomeController;
 use App\Http\Middleware\CheckUserType;
 use App\Models\Category;
 use Database\Seeders\ProductsTableSeeder;
@@ -53,6 +54,9 @@ Route::group([
         ->name('products.images.destroy');
     Route::resource('users', UserController::class);
 });
+
+Route::get('/store', [HomeController::class, 'index'])->name('store');
+Route::view('/product','store.products.show');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

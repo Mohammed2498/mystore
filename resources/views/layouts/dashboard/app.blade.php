@@ -14,7 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{asset('assets/all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dashboard/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/dashboard/css/adminlte.min.css') }}">
@@ -167,7 +167,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
         </nav>
         <!-- /.navbar -->
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -176,19 +175,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <form action="{{route('logout')}}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                           <button class="btn btn-danger">Logout</button>
+                            <button class="btn btn-danger">Logout</button>
                         </form>
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -219,6 +217,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     Categorries
                                 </p>
                             </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('products.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
