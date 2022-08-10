@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\ProductdetailController;
 use App\Http\Middleware\CheckUserType;
 use App\Models\Category;
 use Database\Seeders\ProductsTableSeeder;
@@ -56,7 +57,7 @@ Route::group([
 });
 
 Route::get('/store', [HomeController::class, 'index'])->name('store');
-Route::view('/product','store.products.show');
+Route::get('/product/{id}', [ProductdetailController::class, 'show'])->name('product_daetails');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

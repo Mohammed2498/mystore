@@ -82,7 +82,7 @@
                                     <div class="product-default appear-animate animated fadeInRightShorter appear-animation-visible"
                                         data-animation-name="fadeInRightShorter" style="animation-duration: 1000ms;">
                                         <figure>
-                                            <a href="product.html">
+                                            <a href="{{ route('product_daetails', $product->id) }}">
                                                 <img src="{{ asset('storage/' . $product->image) }}" width="280"
                                                     height="280" alt="product">
                                                 <img src="{{ asset('storage/' . $product->image) }}" width="280"
